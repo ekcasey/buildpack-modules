@@ -1,0 +1,22 @@
+version = "1"
+
+[package]
+id = "io.buildpacks.super.package"
+version = "0.0.3"
+
+[package.default]
+id = "io.buildpacks.multi.order"
+version = "0.0.7"
+
+[[package.buildpacks]]
+uri = "https://example.com/nodejs.tgz"
+
+[[package.buildpacks]]
+uri = "./multi-lang-order"
+
+[[package.packages]]
+ref = "registry.example.com/ruby:0.0.4"
+
+[[package.stacks]]
+id = "io.buildpacks.stacks.bionic"
+mixins = ["build:git"]

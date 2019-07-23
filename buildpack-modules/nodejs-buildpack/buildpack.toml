@@ -1,0 +1,31 @@
+version = "2"
+
+[buildpack]
+  id = "io.buildpacks.nodejs"
+  name = "Node.js Buildpack"
+  version = "0.0.9"
+
+  ## top-level order or path definition is optional
+  ## top-level order or path definition is the default entrypoint if defined
+  [[buildpack.order]]
+    group = [
+      { id = "io.buildpacks.nodejs#engine" },
+      { id = "io.buildpacks.nodejs#npm" },
+      { id = "i.dont.live.here", version = "0.2.0"} # on builder
+    ]
+
+  [[buildpack.modules]]
+    id = "npm"
+    name = "NPM Buildpack"
+    path = "./npm-cnb/"
+    [buildpack.modules.metdata]
+    # ...
+  [[buildpack.modules]]
+    id = "engine"
+    name = "Node Engine Buildpack"
+    path = "./node-cnb/"
+    [buildpack.modules.metdata]
+    # ...
+
+[[buildpack.stacks]]
+id = "io.buildpacks.stacks.bionic"

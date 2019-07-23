@@ -1,0 +1,12 @@
+version = 2
+
+[buildpack]
+  id = "io.buildpacks.multi.order"
+  name = "super order"
+  version = "0.0.7"
+
+  [[buildpack.order]]
+       group = [
+         { id = "io.buildpacks.nodejs", version = "0.0.9" },
+         { id = "io.buildpacks.ruby", verison = "0.0.4" },
+       ]
