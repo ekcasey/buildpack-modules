@@ -7,12 +7,15 @@ version = "2"
 
   ## top-level order or path definition is optional
   ## top-level order or path definition is the default entrypoint if defined
-  [[buildpack.order]]
+[[order]]
     group = [
       { id = "io.buildpacks.nodejs#engine" },
       { id = "io.buildpacks.nodejs#npm" },
       { id = "i.dont.live.here", version = "0.2.0"} # on builder
     ]
+
+## OR
+## path = "."
 
 [[modules]]
     id = "npm"
