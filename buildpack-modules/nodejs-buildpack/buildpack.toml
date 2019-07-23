@@ -21,13 +21,13 @@ version = "2"
     id = "npm"
     name = "NPM Buildpack"
     path = "./npm-cnb/"
-    [buildpack.modules.metdata]
+    [modules.metdata]
     # ...
 [[modules]]
     id = "engine"
     name = "Node Engine Buildpack"
     path = "./node-cnb/"
-    [buildpack.modules.metdata]
+    [modules.metdata]
     # ...
 
 [[stacks]]
