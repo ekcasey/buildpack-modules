@@ -14,18 +14,18 @@ version = "2"
       { id = "i.dont.live.here", version = "0.2.0"} # on builder
     ]
 
-  [[buildpack.modules]]
+[[modules]]
     id = "npm"
     name = "NPM Buildpack"
     path = "./npm-cnb/"
     [buildpack.modules.metdata]
     # ...
-  [[buildpack.modules]]
+[[modules]]
     id = "engine"
     name = "Node Engine Buildpack"
     path = "./node-cnb/"
     [buildpack.modules.metdata]
     # ...
 
-[[buildpack.stacks]]
+[[stacks]]
 id = "io.buildpacks.stacks.bionic"
